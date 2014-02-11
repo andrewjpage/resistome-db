@@ -1,0 +1,10 @@
+aac_1_AJ628983 aminoglycoside
+aac_3_I_1_AJ877225 aminoglycoside
+aac_3_Ia_1_X15852 aminoglycoside
+aac_3_Ib_aac_6_Ib_1_AF355189 aminoglycoside
+aac_3_Ic_1_AJ511268 aminoglycoside
+aac_3_Id_1_AB114632 aminoglycoside
+aac_3_Ig_1_CP000282 aminoglycoside
+aac_3_Ih_1_CP000490 aminoglycoside
+aac_3_Ii_1_CP000356 aminoglycoside
+aac_3_IIb_1_M97172 aminoglycoside

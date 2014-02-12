@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 
 import urllib2, sys, re, argparse, os
-sys.path.append("./modules")    # point to modules dir
+
+m_path = "%s/modules" % os.path.dirname(os.path.realpath(__file__))
+sys.path.append(m_path)    # point to modules dir
 import manage_pickle 
 
 headers = ['Accession No', 'Gene Name', 'Resistance', 'Molecule Type', 

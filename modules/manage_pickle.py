@@ -126,13 +126,23 @@ def search(args):
         [search_ids, search_term] = search_args(args)
            
         check_term(search_term)
+              
+        save_file = False
+        if args.query_output is not None:
+                save_file = True
+                outfile = open(args.query_output, 'w')
                 
         # if valid, return all matches
         print "\t".join(headers)
+        if save_file:
+                outfile.write("%s\n" % "\t".join(headers))
         for d in database:
                 for sid in search_ids:
                         if sid in d[search_term]:
-                                print print_line(d)
+                                pl = print_line(d)
+                                print pl
+                                if save_file:
+                                        outfile.write("%s\n" % pl)
    
 def check_term(search_term):
         # check valid search term
@@ -168,7 +178,7 @@ def show_dbs():
         dbs = [re.sub("%s/" % db_loc, "", x) for x in dbs]
         dbs = [re.sub("\.db", "", x) for x in dbs]
         
-        print "Available databases:"
+        print "Available databases:  (in %s)" % db_loc
         print "\n".join(dbs)
         
                           
@@ -201,7 +211,7 @@ def update_args(args):
 def read_config(confile):
         for key,val in [x.split("\t") for x in open(confile)]:
                 if key == 'db_location':
-                        return val
+                        return val.rstrip()
         
                 
 def die(message):

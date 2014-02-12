@@ -15,6 +15,7 @@ def parse_args(args):
         parser.add_argument('-q', '--query')
         parser.add_argument('-d', '--database')
         parser.add_argument('-t', '--type', default='Accession No')
+        parser.add_argument('-o', '--query-output')
         
         scriptpath, scriptname = os.path.split(os.path.realpath(__file__))
         parser.add_argument('-c', '--config', default="%s/resistome.conf" % scriptpath)
@@ -60,10 +61,11 @@ def print_usage():
                 file of search terms (one per line).
                 Searches on accession number as default. 
                 
-                -q|query      search term
-                -f|file       file of search terms
-                -t|type       specify a different search field.
-                -d|database   name of database
+                -q|query         search term
+                -f|file          file of search terms
+                -t|type          specify a different search field.
+                -d|database      name of database
+                -o|query-output  output file name
                 
                 Example:
                 resistome.py query -q ACCNO123 -d resistome1

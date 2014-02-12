@@ -89,15 +89,23 @@ def print_usage():
         
                 Example:
                 resistome.py avail
+                
+        help:   Show this help menu
             """
 	
 # MAIN
 args = sys.argv[1:]
-mode = args.pop(0)	
+try:
+        mode = args.pop(0)	
+except IndexError:
+        print_usage()
+        sys.exit()
   
 if mode in ['add', 'query', 'update', 'save', 'avail', 'test']:
         opts = parse_args(args)
         manage_pickle.run(mode, opts)
+elif mode == 'help':
+        print_usage()
 else:
         print "Please specify valid mode:"
         print_usage()

@@ -178,7 +178,7 @@ def show_dbs():
         dbs = [re.sub("%s/" % db_loc, "", x) for x in dbs]
         dbs = [re.sub("\.db", "", x) for x in dbs]
         
-        print "Available databases:  (in %s)" % db_loc
+        print "Available databases:"
         print "\n".join(dbs)
         
                           
